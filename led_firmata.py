@@ -10,6 +10,6 @@ led = board.get_pin('d:13:o')
 
 while True:
     led.write(1)  # Liga o LED
-    time.sleep(1)
+    time.sleep(2)
     led.write(0)  # Desliga o LED
-    time.sleep(1)
+    time.sleep(2)

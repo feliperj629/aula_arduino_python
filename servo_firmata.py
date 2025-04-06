@@ -4,6 +4,17 @@ from pyfirmata import Arduino, util
 # Substitua pela porta do seu Arduino (ex: "COM3" ou "/dev/ttyACM0")
 board = Arduino('COM4')  # Altere conforme necessário
 
+# Observação:
+# Se você estiver usando Python 3.11 ou superior e receber o erro:
+# "AttributeError: module 'inspect' has no attribute 'getargspec'"
+# Vá até o arquivo pyfirmata.py (no site-packages) e substitua:
+# Geralmente dentro de C:\Users\NOMEUSUARIO\AppData\Roaming\Python\PythonXXX\site-packages\pyfirmata\pyfirmata.py
+#
+# procurar por:
+#    len_args = len(inspect.getargspec(func)[0])
+# por:
+#    len_args = len(inspect.getfullargspec(func).args)
+
 # Inicia leitura assíncrona
 it = util.Iterator(board)
 it.start()
